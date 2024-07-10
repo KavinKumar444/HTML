@@ -1,0 +1,31 @@
+function calculate(){
+    let height=parseInt(document.getElementById('height').value);
+    let weight=parseInt(document.getElementById('weight').value);
+
+    if(weight>5&&weight<300)
+    {
+        if(height>50&&height<300)
+        {
+            height=height/100;
+            let BMI=weight/(height*weight);
+            BMI=BMI.toFixed(1);
+            document.getElementById('result').innerHTML= BMI;
+            if(BMI<18.5)
+            {
+                document.getElementById('result').style.backgroundColor="black";
+            }
+            else if(BMI<25){
+                document.getElementById('result').style.backgroundColor="red";
+            }
+            else if(BMI<30){
+                document.getElementById('result').style.backgroundColor="blue";
+            }
+            else{
+                document.getElementById('result').style.backgroundColor="green";
+            }
+            else{
+                document.getElementById('result').innerHTML= BMI;
+            }
+        }
+    }
+}
